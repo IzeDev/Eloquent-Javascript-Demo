@@ -1,17 +1,26 @@
+function sendGetRequest(contentType) {
+    let request = new XMLHttpRequest();
+    request.open("GET", "https://eloquentjavascript.net/authors", true);
+    request.setRequestHeader("content-type", contentType);
+    request.addEventListener("load", function() {
+        console.log(request.responseText);
+    });
+    request.send(null);
+}
+
 function clickEvent(event) {
-    debugger;
     switch(event.target.id) {
         case "text/plain-button":
-            alert("You clicked A");
+            sendGetRequest("text/plain");
             break;
         case "text/html-button":
-            alert("You clicked B");
+            sendGetRequest("text/html");
             break;
         case "application/json-button":
-            alert("You clicked C");
+            sendGetRequest("application/json");            
             break;
         case "unicorns-button":
-            alert("You clicked D");
+            sendGetRequest("unicorns"); 
             break;
         default:
             break;
