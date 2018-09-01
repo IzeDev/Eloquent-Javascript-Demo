@@ -39,7 +39,7 @@ function toggleDropdown(doShow, size = null) {
 }
 function newInput(event) {
     log("newInput");
-    if (textbox.value == textbox) {
+    if (textbox.value == textbox.dataset.value) {
     }
     textbox.dataset.value = "";
     toggleDropdown(false);
